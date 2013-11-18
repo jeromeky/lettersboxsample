@@ -1,3 +1,9 @@
+/.idea/workspace.xml
+
+# Ignore gradle files
+.gradle/
+build/
+
 # built application files
 *.apk
 *.ap_
@@ -27,3 +33,5 @@ proguard/
 *.ipr
 *.iws
 .idea/
+
+.DS_Store

@@ -2,14 +2,8 @@ package com.arkanan.lettersboxsample;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
 import android.util.TypedValue;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -30,20 +24,32 @@ public class MainActivity extends ActionBarActivity {
 
         final Activity myActivity = this;
 
+        //Declare linearlayout where lettersbox will show
         LinearLayout enterLetters = (LinearLayout) this.findViewById(R.id.linearlayout_enter_letters);
         LinearLayout randomLetters = (LinearLayout) this.findViewById(R.id.linearlayout_random_letters);
+
+        //Create LettersBoxArg which will contains all need to create lettersbox
         LettersBoxArg arg = new LettersBoxArg(this, enterLetters, randomLetters);
 
+        //Create a list of words to guess
         List<String> strings = new ArrayList<String>();
         strings.add("robin des bois");
         strings.add("spiderman");
         strings.add("batman");
 
+        //Create a EnterLettersBoxStyle (or RandomLettersBoxStyle) if you want to custom letters
+        //Otherwise it will take the default style
         EnterLettersBoxStyle enterLettersBoxStyle = new EnterLettersBoxStyle();
         enterLettersBoxStyle.setSizeUnit(TypedValue.COMPLEX_UNIT_DIP);
         enterLettersBoxStyle.setSize(10);
 
+        //Set all settings to arg object
         arg.setWords(strings).setMaxLetters(20).setMaxLine(2).setEnterLettersStyle(enterLettersBoxStyle );
+
+        //Use LettersBoxFactory to construct lettersbox
+        //You have to override two methods :
+        // - onFullEnterLetters : this method is call when user type all enter letters
+        // - onEmptyListWords : this method is call when there is no more words in the list
         new LettersBoxFactory(arg) {
 
             @Override

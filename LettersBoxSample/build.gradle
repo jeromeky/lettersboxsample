@@ -24,6 +24,6 @@ android {
 }
 
 dependencies {
-	compile 'com.android.support:appcompat-v7:+'
+    compile 'com.android.support:appcompat-v7:+'
     compile 'com.arkanan:lettersbox:0.0.1'
 }

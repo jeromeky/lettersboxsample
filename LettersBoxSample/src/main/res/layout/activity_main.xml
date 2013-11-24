@@ -8,6 +8,25 @@
     <LinearLayout
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
+        android:orientation="horizontal"
+        android:background="@android:color/darker_gray"
+        android:layout_gravity="center">
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_hint"
+            android:text="hint"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/button_answer"
+            android:text="answer"/>
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
         android:orientation="vertical">
         <TextView
             android:layout_height="wrap_content"
@@ -22,7 +41,6 @@
 
     </LinearLayout>
 
-
     <LinearLayout android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -33,4 +51,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/linearlayout_enter_letters"/>
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:background="@android:color/darker_gray"
+        android:gravity="center"
+        android:layout_marginTop="10dip">
+
+    <Button
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/button_next"
+        android:visibility="gone"
+        android:text="next"/>
+    </LinearLayout>
 </LinearLayout>
